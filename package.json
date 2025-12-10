@@ -7,8 +7,13 @@
     "bingTest": "npx playwright test tests/Day1_112525/T1_Bing_Search.spec.ts --headed --workers=1 --project=chromium --reporter=html",
     "mouseHover_USPS": "npx playwright test tests/Day2_120125/T1_MouseHover_USPS.spec.ts --headed --workers=1 --project=chromium --reporter=html",
     "smokeSuite": "npx playwright test --grep @smoke tests/* --headed --workers=1 --project=chromium --reporter=html",
-    "bingTestLoop": "npx playwright test tests/Day2_120125/T2_Bing_Search_Loop.spec.ts --headed --workers=1 --project=chromium --reporter=html"
-  },
+    "bingTestLoop": "npx playwright test tests/Day2_120125/T2_Bing_Search_Loop.spec.ts --headed --workers=1 --project=chromium --reporter=html",
+    "bingTestCrossBrowser": "npx playwright test tests/Day1_112525/T1_Bing_Search.spec.ts --headed --workers=1 --project=chromium --project=firefox --reporter=html",
+    "uspsParallel": "npx playwright test tests/Day3_120225/T1_USPS_Multiple_Tests.spec.ts --headed --workers=2 --project=chromium --reporter=html",
+    "uspsParallelCrossBrowser": "npx playwright test tests/Day3_120225/T1_USPS_Multiple_Tests.spec.ts --headed --workers=4 --project=chromium --project=firefox --reporter=html",
+    "weightWachersCB": "npx playwright test tests/Action_Items/Weight_Watchers.spec.ts --headed --workers=1 --project=chromium --project=firefox --reporter=html",
+    "bingReusable": "npx playwright test tests/Day4_120825/bing_search_reusable.spec.ts --headed --workers=1 --project=chromium --reporter=html"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
