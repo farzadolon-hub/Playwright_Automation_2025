@@ -9,6 +9,7 @@ export async function click(page: Page, locator: string, elementName: string) {
 //method to click on any element by index
 export async function clickByIndex(page: Page, locator: string, index: number, elementName: string) {
     console.log("Clicking on element " + elementName);
+    //await page.waitForTimeout(2000);
     await page.locator(locator).nth(index).click();
 }//end of clickByIndex method
 
@@ -41,3 +42,42 @@ export async function getTextByIndex(page: Page, locator: string, index: number,
     let result = await page.locator(locator).nth(index).innerText();
     return result;
 }//end of getTextByIndex method
+
+//Reusable method for select dropdown 
+export async function selectFromDropdown(page: Page,locator: string,optionValue: string,elementName: string){
+  console.log("Selecting value from dropdown element " + elementName);
+  await page.locator(locator).selectOption(optionValue);
+}// end of select method
+
+//Reusable method for select dropdown by index
+export async function selectFromDropdownByIndex(page: Page,locator: string,index: number,elementName: string){
+  console.log("Selecting value from dropdown element " + elementName);
+  await page.locator(locator).selectOption({index: index});
+}// end of selectByIndex method
+
+
+//method to mouse hover on any unique element
+export async function mouseHover(page: Page, locator: string, elementName: string){
+    console.log("Hovering on " + elementName);
+    await page.locator(locator).hover();
+}//end of mouseHover method
+
+//method to mouse hover on any element by index
+export async function mouseHoverByIndex(page: Page, locator: string, index: number, elementName: string){
+    console.log("Hovering on " + elementName);
+    await page.locator(locator).nth(index).hover();
+}//end of mouseHoverByIndex method
+
+
+//method to scroll by pixel
+export async function scrollByPixel(page: Page, deltaX: number, deltaY: number){
+    console.log("Scrolling by pixel " + deltaX + ", " + deltaY);
+    await page.mouse.wheel(deltaX, deltaY);
+}//end of scrollByPixel method
+
+//method to scroll by element
+export async function scrollToElement(page: Page, locator: string, elementName: string){
+    console.log("Scrolling to element " + elementName);
+    await page.locator(locator).scrollIntoViewIfNeeded();
+}//end of scrollToElement method
+
